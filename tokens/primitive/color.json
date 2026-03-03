@@ -1,0 +1,56 @@
+{
+  "color": {
+    "$type": "color",
+    "brand": {
+      "primary":      { "$value": "#7C8DF5", "$description": "Main brand color" },
+      "primary-dark": { "$value": "#8B9BFF", "$description": "Main brand color (dark)" },
+      "blue":         { "$value": "#8BB9FF", "$description": "Gradient start" },
+      "blue-dark":    { "$value": "#7AABFF", "$description": "Gradient start (dark)" },
+      "purple":       { "$value": "#B9B3F5", "$description": "Gradient middle" },
+      "purple-dark":  { "$value": "#A8A2E6", "$description": "Gradient middle (dark)" },
+      "pink":         { "$value": "#F6B6E8", "$description": "Gradient end" },
+      "pink-dark":    { "$value": "#E5A5D7", "$description": "Gradient end (dark)" }
+    },
+    "accent": {
+      "purple":       { "$value": "#9A8CF2" },
+      "purple-dark":  { "$value": "#ABA0FF" },
+      "pink":         { "$value": "#F3A6DC" },
+      "pink-dark":    { "$value": "#FF9ED4" },
+      "blue":         { "$value": "#A5C7FF" },
+      "blue-dark":    { "$value": "#8DB8FF" },
+      "gold":         { "$value": "#FFD36A" },
+      "gold-dark":    { "$value": "#FFCC4D" },
+      "system":       { "$value": "#A78BFA", "$description": "iOS AccentColor" },
+      "system-dark":  { "$value": "#8B5CF6", "$description": "iOS AccentColor (dark)" }
+    },
+    "semantic": {
+      "success":      { "$value": "#6ED6A8" },
+      "success-dark": { "$value": "#4AD98D" },
+      "warning":      { "$value": "#FFC26A" },
+      "warning-dark": { "$value": "#FFB74D" },
+      "error":        { "$value": "#FF6B6B" },
+      "error-dark":   { "$value": "#FF5E5E" },
+      "info":         { "$value": "#7BAAFF" },
+      "info-dark":    { "$value": "#6B9AEF" }
+    },
+    "text": {
+      "primary":        { "$value": "#2D2E4A" },
+      "primary-dark":   { "$value": "#F5F5F7" },
+      "secondary":      { "$value": "#6B6F9C" },
+      "secondary-dark": { "$value": "#A1A1A6" },
+      "hint":           { "$value": "#A3A6C8" },
+      "hint-dark":      { "$value": "#636366" },
+      "on-dark":        { "$value": "#FFFFFF" }
+    },
+    "background": {
+      "main":        { "$value": "#F7F8FD" },
+      "card":        { "$value": "#FFFFFF" },
+      "subtle":      { "$value": "#EEF0FA" },
+      "main-dark":   { "$value": "#000000" },
+      "card-dark":   { "$value": "#1C1C1E" },
+      "subtle-dark": { "$value": "#2C2C2E" }
+    },
+    "white": { "$value": "#FFFFFF" },
+    "black": { "$value": "#000000" }
+  }
+}

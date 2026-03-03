@@ -1,0 +1,45 @@
+{
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "primary":  { "$value": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" },
+      "mono":     { "$value": "'SF Mono', Menlo, Monaco, Consolas, monospace" },
+      "reader":   { "$value": "Georgia" }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular":  { "$value": 400 },
+      "medium":   { "$value": 500 },
+      "semibold": { "$value": 600 },
+      "bold":     { "$value": 700 }
+    },
+    "size": {
+      "$type": "dimension",
+      "display":     { "$value": "34px" },
+      "title1":      { "$value": "28px" },
+      "title2":      { "$value": "22px" },
+      "title3":      { "$value": "20px" },
+      "headline":    { "$value": "17px" },
+      "body":        { "$value": "17px" },
+      "callout":     { "$value": "16px" },
+      "subheadline": { "$value": "15px" },
+      "footnote":    { "$value": "13px" },
+      "caption1":    { "$value": "12px" },
+      "caption2":    { "$value": "11px" }
+    },
+    "lineHeight": {
+      "$type": "dimension",
+      "display":     { "$value": "40px" },
+      "title1":      { "$value": "34px" },
+      "title2":      { "$value": "28px" },
+      "title3":      { "$value": "25px" },
+      "headline":    { "$value": "22px" },
+      "body":        { "$value": "22px" },
+      "callout":     { "$value": "21px" },
+      "subheadline": { "$value": "20px" },
+      "footnote":    { "$value": "18px" },
+      "caption1":    { "$value": "16px" },
+      "caption2":    { "$value": "13px" }
+    }
+  }
+}
