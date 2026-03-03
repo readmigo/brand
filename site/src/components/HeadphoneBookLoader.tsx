@@ -127,4 +127,41 @@ export default function HeadphoneBookLoader({ size = 80, dark = false }: Props) 
       {/* Left ear cup */}
       <rect x="6" y="42" width="18" height="26" rx="7" fill={`url(#cupGrad${dark ? "D" : "L"})`} />
       <rect x="9" y="46" width="12" height="18" rx="5" fill="none" stroke={t.brandPink} strokeWidth="0.8" opacity="0.4" />
-      <rect x="10.5" y="48" width="9"
+      <rect x="10.5" y="48" width="9" height="14" rx="4" fill={t.bgSubtle} opacity="0.3" />
+
+      {/* Right ear cup */}
+      <rect x="64" y="42" width="18" height="26" rx="7" fill={`url(#cupGrad${dark ? "D" : "L"})`} />
+      <rect x="67" y="46" width="12" height="18" rx="5" fill="none" stroke={t.brandPink} strokeWidth="0.8" opacity="0.4" />
+      <rect x="68.5" y="48" width="9" height="14" rx="4" fill={t.bgSubtle} opacity="0.3" />
+
+      {/* Floating particles */}
+      {allParticles.map((p, i) => {
+        const rad = p.angle * Math.PI / 180;
+        const px = cx + p.r * Math.cos(rad);
+        const py = cy + p.r * Math.sin(rad);
+        return (
+          <text key={i} x={px} y={py} fontSize={p.sz} fill={p.color} textAnchor="middle"
+            dominantBaseline="middle" opacity="0">
+            <animate attributeName="opacity" values="0;0.9;0" dur={`${p.dur}s`}
+              begin={`${p.delay}s`} repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="translate"
+              values={`0 0; ${(Math.cos(rad) * 6).toFixed(1)} ${(Math.sin(rad) * 6).toFixed(1)}; 0 0`}
+              dur={`${p.dur}s`} begin={`${p.delay}s`} repeatCount="indefinite" />
+            {p.ch}
+          </text>
+        );
+      })}
+
+      {/* Sparkles */}
+      {sparkles.map((s, i) => (
+        <circle key={`sp${i}`} r={s.size} fill={s.color} opacity="0">
+          <animate attributeName="opacity" values="0;1;0" dur={`${s.dur}s`}
+            begin={`${s.delay}s`} repeatCount="indefinite" />
+          <animateMotion
+            values={`${s.sx},${s.sy}; ${s.ex},${s.ey}`}
+            dur={`${s.dur}s`} begin={`${s.delay}s`} repeatCount="indefinite" />
+        </circle>
+      ))}
+    </svg>
+  );
+}
