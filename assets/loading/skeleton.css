@@ -1,0 +1,42 @@
+/* Brand Loading Styles */
+
+/* Skeleton Pulse */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.skeleton {
+  background: linear-gradient(135deg, #8BB9FF20 0%, #B9B3F520 50%, #F6B6E820 100%);
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* Brand Spinner */
+@keyframes brand-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.brand-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #EEF0FA;
+  border-top-color: #7C8DF5;
+  border-radius: 50%;
+  animation: brand-spin 0.8s linear infinite;
+}
+
+/* Brand Progress Bar */
+.brand-progress {
+  height: 4px;
+  background: #EEF0FA;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.brand-progress-bar {
+  height: 100%;
+  background: linear-gradient(135deg, #8BB9FF 0%, #B9B3F5 50%, #F6B6E8 100%);
+  transition: width 0.3s ease;
+}
