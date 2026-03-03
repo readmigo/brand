@@ -1,0 +1,10 @@
+{
+  "component": {
+    "card": {
+      "background": { "$type": "color", "$value": "{semantic.surface.card}" },
+      "radius":     { "$type": "dimension", "$value": "{radius.lg}" },
+      "padding":    { "$type": "dimension", "$value": "{spacing.4}" },
+      "shadow":     { "$type": "shadow", "$value": "{shadow.sm}" }
+    }
+  }
+}

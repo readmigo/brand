@@ -1,0 +1,21 @@
+{
+  "component": {
+    "reader": {
+      "light": {
+        "background": { "$type": "color", "$value": "#FFFFFF" },
+        "text":       { "$type": "color", "$value": "#000000" },
+        "link":       { "$type": "color", "$value": "#007AFF" }
+      },
+      "sepia": {
+        "background": { "$type": "color", "$value": "#FAF2E3" },
+        "text":       { "$type": "color", "$value": "#4D331A" },
+        "link":       { "$type": "color", "$value": "#0066CC" }
+      },
+      "dark": {
+        "background": { "$type": "color", "$value": "#1F1F1F" },
+        "text":       { "$type": "color", "$value": "#D9D9D9" },
+        "link":       { "$type": "color", "$value": "#64B5F6" }
+      }
+    }
+  }
+}

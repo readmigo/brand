@@ -1,0 +1,27 @@
+{
+  "component": {
+    "button": {
+      "primary": {
+        "background":    { "$type": "color", "$value": "{semantic.action.primary}" },
+        "text":          { "$type": "color", "$value": "{color.white}" },
+        "radius":        { "$type": "dimension", "$value": "{radius.default}" },
+        "height-sm":     { "$type": "dimension", "$value": "32px" },
+        "height-md":     { "$type": "dimension", "$value": "40px" },
+        "height-lg":     { "$type": "dimension", "$value": "48px" },
+        "font-size-sm":  { "$type": "dimension", "$value": "14px" },
+        "font-size-md":  { "$type": "dimension", "$value": "16px" },
+        "font-size-lg":  { "$type": "dimension", "$value": "17px" },
+        "padding-v":     { "$type": "dimension", "$value": "{spacing.3}" },
+        "padding-h":     { "$type": "dimension", "$value": "{spacing.4}" }
+      },
+      "secondary": {
+        "background": { "$type": "color", "$value": "{color.gray.100}" },
+        "text":       { "$type": "color", "$value": "{semantic.text.primary}" }
+      },
+      "destructive": {
+        "background": { "$type": "color", "$value": "{semantic.status.error}" },
+        "text":       { "$type": "color", "$value": "{color.white}" }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "component": {
+    "input": {
+      "height":       { "$type": "dimension", "$value": "44px" },
+      "radius":       { "$type": "dimension", "$value": "{radius.default}" },
+      "border":       { "$type": "color", "$value": "{semantic.border.default}" },
+      "border-focus": { "$type": "color", "$value": "{semantic.action.primary}" },
+      "padding-v":    { "$type": "dimension", "$value": "{spacing.3}" },
+      "padding-h":    { "$type": "dimension", "$value": "{spacing.4}" },
+      "placeholder":  { "$type": "color", "$value": "{semantic.text.hint}" }
+    }
+  }
+}
