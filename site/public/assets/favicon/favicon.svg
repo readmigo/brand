@@ -1,10 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#8DC5FB"/>
+      <stop offset="50%" stop-color="#C0B5F5"/>
+      <stop offset="100%" stop-color="#F0A5CA"/>
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="20" fill="url(#grad)"/>
-  <text x="50" y="68" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">R</text>
+  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
+  <!-- Left page -->
+  <path d="M7 23.4 V12.5 Q7 8, 11.3 8 Q15.6 8, 15.6 12.5 V23.1 C15.6 24.4, 11.3 24.4, 7 23.4 Z" fill="white"/>
+  <!-- Right page -->
+  <path d="M25 23.4 V12.5 Q25 8, 20.7 8 Q16.4 8, 16.4 12.5 V23.1 C16.4 24.4, 20.7 24.4, 25 23.4 Z" fill="white"/>
 </svg>

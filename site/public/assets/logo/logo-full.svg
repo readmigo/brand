@@ -1,4 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#5D5CDE"/>
-  <text x="16" y="22" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="white">R</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#8DC5FB"/>
+      <stop offset="50%" stop-color="#C0B5F5"/>
+      <stop offset="100%" stop-color="#F0A5CA"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <!-- Left page -->
+  <path d="M113 375 V200 Q113 128, 181 128 Q249 128, 249 200 V370 C249 390, 181 390, 113 375 Z" fill="white"/>
+  <!-- Right page -->
+  <path d="M399 375 V200 Q399 128, 331 128 Q263 128, 263 200 V370 C263 390, 331 390, 399 375 Z" fill="white"/>
 </svg>

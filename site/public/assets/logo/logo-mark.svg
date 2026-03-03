@@ -1,22 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Book Icon - Two open pages -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286 262" fill="none">
   <defs>
-    <linearGradient id="brandGradient" x1="60" y1="20" x2="60" y2="100" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#8BB9FF"/>
-      <stop offset="50%" stop-color="#B9B3F5"/>
-      <stop offset="100%" stop-color="#F6B6E8"/>
+    <linearGradient id="grad" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#8DC5FB"/>
+      <stop offset="50%" stop-color="#C0B5F5"/>
+      <stop offset="100%" stop-color="#F0A5CA"/>
     </linearGradient>
   </defs>
-
   <!-- Left page -->
-  <path d="M18 30 C18 26 21 23 25 23 L55 23 C57 23 58 24 58 26 L58 90 C58 92 57 93 55 93 L25 93 C21 93 18 90 18 86 L18 30 Z"
-        fill="url(#brandGradient)"/>
-
+  <path d="M0 247 V72 Q0 0, 68 0 Q136 0, 136 72 V242 C136 262, 68 262, 0 247 Z" fill="url(#grad)"/>
   <!-- Right page -->
-  <path d="M62 26 C62 24 63 23 65 23 L95 23 C99 23 102 26 102 30 L102 86 C102 90 99 93 95 93 L65 93 C63 93 62 92 62 90 L62 26 Z"
-        fill="url(#brandGradient)"/>
-
-  <!-- Center spine highlight -->
-  <rect x="57" y="23" width="6" height="70" fill="url(#brandGradient)" opacity="0.3"/>
+  <path d="M286 247 V72 Q286 0, 218 0 Q150 0, 150 72 V242 C150 262, 218 262, 286 247 Z" fill="url(#grad)"/>
 </svg>
