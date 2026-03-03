@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import spacingTokens from '../../../../tokens/semantic/spacing.json';
+import radiusTokens from '../../../../tokens/semantic/radius.json';
+
+const spacingEntries = Object.entries(spacingTokens.spacing)
+  .filter(([key]) => key !== '$type')
+  .map(([name, token]) => ({
+    name: `spacing.${name}`,
+    value: (token as { $value: string }).$value,
+  }));
+
+const radiusEntries = Object.entries(radiusTokens.radius)
+  .filter(([key]) => key !== '$type')
+  .map(([name, token]) => ({
+    name,
+    value: (token as { $value: string }).$value,
+  }));
+---
+<Layout title="Spacing & Radius Tokens">
+  <h1 class="text-3xl font-bold" style="color: var(--semantic-text-primary, #2D2E4A);">
+    Spacing & Radius Tokens
+  </h1>
+
+  <div class="mt-8 space-y-12">
+    <!-- Spacing Scale -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Spacing Scale
+      </h2>
+      <div class="space-y-3">
+        {spacingEntries.map((s) => (
+          <div class="flex items-center gap-4">
+            <div
+              class="w-28 shrink-0 text-right"
+            >
+              <span
+                class="text-sm font-medium"
+                style="color: var(--semantic-text-primary, #2D2E4A);"
+              >
+                {s.name}
+              </span>
+              <span
+                class="ml-2 font-mono text-xs"
+                style="color: var(--semantic-text-hint, #A3A6C8);"
+              >
+                {s.value}
+              </span>
+            </div>
+            <div class="flex-1">
+              <div
+                class="rounded"
+                style={`width: ${s.value}; height: 24px; min-width: 2px; background: linear-gradient(135deg, #8BB9FF 0%, #B9B3F5 50%, #F6B6E8 100%);`}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Spacing Reference Table -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Spacing Reference
+      </h2>
+      <div
+        class="overflow-hidden rounded-xl border"
+        style="border-color: var(--semantic-border-default, #E4E4E7);"
+      >
+        <table class="w-full text-sm">
+          <thead>
+            <tr style="background-color: var(--semantic-surface-subtle, #EEF0FA);">
+              <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Token</th>
+              <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Value</th>
+              <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Pixels</th>
+            </tr>
+          </thead>
+          <tbody>
+            {spacingEntries.map((s) => (
+              <tr style="border-top: 1px solid var(--semantic-border-default, #E4E4E7);">
+                <td class="px-4 py-2 font-mono text-xs font-medium" style="color: var(--semantic-text-primary, #2D2E4A);">{s.name}</td>
+                <td class="px-4 py-2 font-mono text-xs" style="color: var(--semantic-text-secondary, #6B6F9C);">{s.value}</td>
+                <td class="px-4 py-2 font-mono text-xs" style="color: var(--semantic-text-secondary, #6B6F9C);">{parseInt(s.value)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Border Radius -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Border Radius
+      </h2>
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+        {radiusEntries.map((r) => (
+          <div class="flex flex-col items-center gap-2">
+            <div
+              class="flex h-16 w-16 items-center justify-center border-2"
+              style={`border-radius: ${r.value}; border-color: #7C8DF5; background-color: var(--semantic-surface-subtle, #EEF0FA);`}
+            >
+              <span
+                class="font-mono text-xs"
+                style="color: var(--semantic-text-secondary, #6B6F9C);"
+              >
+                {r.value}
+              </span>
+            </div>
+            <span
+              class="text-xs font-medium"
+              style="color: var(--semantic-text-primary, #2D2E4A);"
+            >
+              {r.name}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Radius Reference Table -->
+      <div
+        class="mt-6 overflow-hidden rounded-xl border"
+        style="border-color: var(--semantic-border-default, #E4E4E7);"
+      >
+        <table class="w-full text-sm">
+          <thead>
+            <tr style="background-color: var(--semantic-surface-subtle, #EEF0FA);">
+              <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Token</th>
+              <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {radiusEntries.map((r) => (
+              <tr style="border-top: 1px solid var(--semantic-border-default, #E4E4E7);">
+                <td class="px-4 py-2 font-mono text-xs font-medium" style="color: var(--semantic-text-primary, #2D2E4A);">radius.{r.name}</td>
+                <td class="px-4 py-2 font-mono text-xs" style="color: var(--semantic-text-secondary, #6B6F9C);">{r.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</Layout>

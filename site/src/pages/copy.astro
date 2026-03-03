@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CopyViewer from '../components/CopyViewer.tsx';
+
+// App Store copy
+import appleEn from '../../../copy/store/apple/en.json';
+import appleZhHans from '../../../copy/store/apple/zh-Hans.json';
+import appleZhHant from '../../../copy/store/apple/zh-Hant.json';
+
+// Google Play copy
+import googleEn from '../../../copy/store/google/en-US.json';
+import googleZhCN from '../../../copy/store/google/zh-CN.json';
+import googleZhTW from '../../../copy/store/google/zh-TW.json';
+
+// Shared brand copy
+import sharedEn from '../../../copy/shared/en.json';
+import sharedZhHans from '../../../copy/shared/zh-Hans.json';
+import sharedZhHant from '../../../copy/shared/zh-Hant.json';
+
+const appleCopies = [
+  { lang: 'en', data: appleEn },
+  { lang: 'zh-Hans', data: appleZhHans },
+  { lang: 'zh-Hant', data: appleZhHant },
+];
+
+const googleCopies = [
+  { lang: 'en-US', data: googleEn },
+  { lang: 'zh-CN', data: googleZhCN },
+  { lang: 'zh-TW', data: googleZhTW },
+];
+
+const sharedCopies = [
+  { lang: 'en', data: sharedEn },
+  { lang: 'zh-Hans', data: sharedZhHans },
+  { lang: 'zh-Hant', data: sharedZhHant },
+];
+---
+<Layout title="Copy Management">
+  <h1 class="text-3xl font-bold" style="color: var(--semantic-text-primary, #2D2E4A);">
+    Copy Management
+  </h1>
+  <p class="mt-2 text-sm" style="color: var(--semantic-text-secondary, #6B6F9C);">
+    Store descriptions, metadata, and shared brand copy across all supported languages.
+  </p>
+
+  <div class="mt-8 space-y-12">
+    <!-- App Store -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        App Store (Apple)
+      </h2>
+      <div
+        class="overflow-hidden rounded-xl border"
+        style="border-color: var(--semantic-border-default, #E4E4E7); background-color: var(--semantic-surface-card, #FFFFFF);"
+      >
+        <CopyViewer copies={appleCopies} client:load />
+      </div>
+    </section>
+
+    <!-- Google Play -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Google Play
+      </h2>
+      <div
+        class="overflow-hidden rounded-xl border"
+        style="border-color: var(--semantic-border-default, #E4E4E7); background-color: var(--semantic-surface-card, #FFFFFF);"
+      >
+        <CopyViewer copies={googleCopies} client:load />
+      </div>
+    </section>
+
+    <!-- Shared Brand Copy -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Shared Brand Copy
+      </h2>
+      <div
+        class="overflow-hidden rounded-xl border"
+        style="border-color: var(--semantic-border-default, #E4E4E7); background-color: var(--semantic-surface-card, #FFFFFF);"
+      >
+        <CopyViewer copies={sharedCopies} client:load />
+      </div>
+    </section>
+  </div>
+</Layout>

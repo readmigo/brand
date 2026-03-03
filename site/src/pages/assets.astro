@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AssetCard from '../components/AssetCard.tsx';
+
+const assetGroups = [
+  {
+    title: 'Logo',
+    items: [
+      {
+        name: 'Full Logo',
+        src: '/assets/logo/logo-full.svg',
+        formats: [
+          { label: 'SVG', url: '/assets/logo/logo-full.svg' },
+          { label: 'PNG', url: '/assets/logo/logo-full.png' },
+          { label: 'WebP', url: '/assets/logo/logo.webp' },
+        ],
+      },
+      {
+        name: 'Logo Mark',
+        src: '/assets/logo/logo-mark.svg',
+        formats: [
+          { label: 'SVG', url: '/assets/logo/logo-mark.svg' },
+        ],
+      },
+      {
+        name: 'Logo Horizontal',
+        src: '/assets/logo/logo-horizontal.svg',
+        formats: [
+          { label: 'SVG', url: '/assets/logo/logo-horizontal.svg' },
+        ],
+      },
+      {
+        name: 'Splash Logo',
+        src: '/assets/logo/splash-logo.png',
+        formats: [
+          { label: 'PNG', url: '/assets/logo/splash-logo.png' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'App Icon',
+    items: [
+      {
+        name: 'App Icon',
+        src: '/assets/app-icon/app-icon.png',
+        formats: [
+          { label: 'PNG', url: '/assets/app-icon/app-icon.png' },
+          { label: 'SVG', url: '/assets/app-icon/icon.svg' },
+        ],
+      },
+      {
+        name: 'Icon 1024x1024',
+        src: '/assets/app-icon/icon-1024.png',
+        formats: [
+          { label: 'PNG 1024', url: '/assets/app-icon/icon-1024.png' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Favicon',
+    items: [
+      {
+        name: 'Favicon',
+        src: '/assets/favicon/favicon.svg',
+        formats: [
+          { label: 'SVG', url: '/assets/favicon/favicon.svg' },
+          { label: 'ICO', url: '/assets/favicon/favicon.ico' },
+        ],
+      },
+    ],
+  },
+];
+---
+<Layout title="Brand Assets">
+  <h1 class="text-3xl font-bold" style="color: var(--semantic-text-primary, #2D2E4A);">
+    Brand Assets
+  </h1>
+  <p class="mt-2 text-sm" style="color: var(--semantic-text-secondary, #6B6F9C);">
+    Download official ReadMigo logos, app icons, and favicons.
+  </p>
+
+  <div class="mt-8 space-y-12">
+    {assetGroups.map((group) => (
+      <section>
+        <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+          {group.title}
+        </h2>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {group.items.map((item) => (
+            <AssetCard
+              name={item.name}
+              src={item.src}
+              formats={item.formats}
+              client:load
+            />
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</Layout>

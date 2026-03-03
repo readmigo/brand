@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ButtonPreview from '../../components/ButtonPreview.tsx';
+
+import buttonTokens from '../../../../tokens/component/button.json';
+import cardTokens from '../../../../tokens/component/card.json';
+import inputTokens from '../../../../tokens/component/input.json';
+
+// Resolve reference tokens to actual values for preview
+const variants = [
+  {
+    name: 'Primary',
+    background: '#7C8DF5',
+    text: '#FFFFFF',
+    radius: '8px',
+    sizes: [
+      { label: 'sm', height: '32px', fontSize: '14px' },
+      { label: 'md', height: '40px', fontSize: '16px' },
+      { label: 'lg', height: '48px', fontSize: '17px' },
+    ],
+  },
+  {
+    name: 'Secondary',
+    background: '#F4F4F5',
+    text: '#2D2E4A',
+    radius: '8px',
+    sizes: [
+      { label: 'sm', height: '32px', fontSize: '14px' },
+      { label: 'md', height: '40px', fontSize: '16px' },
+      { label: 'lg', height: '48px', fontSize: '17px' },
+    ],
+  },
+  {
+    name: 'Destructive',
+    background: '#FF3B30',
+    text: '#FFFFFF',
+    radius: '8px',
+    sizes: [
+      { label: 'sm', height: '32px', fontSize: '14px' },
+      { label: 'md', height: '40px', fontSize: '16px' },
+      { label: 'lg', height: '48px', fontSize: '17px' },
+    ],
+  },
+];
+
+// Card token info
+const card = cardTokens.component.card;
+const cardRows = [
+  { property: 'background', reference: card.background.$value, resolved: '{semantic.surface.card}' },
+  { property: 'radius', reference: card.radius.$value, resolved: '{radius.lg} = 12px' },
+  { property: 'padding', reference: card.padding.$value, resolved: '{spacing.4} = 16px' },
+  { property: 'shadow', reference: card.shadow.$value, resolved: '{shadow.sm}' },
+];
+
+// Input token info
+const input = inputTokens.component.input;
+const inputRows = [
+  { property: 'height', value: input.height.$value },
+  { property: 'radius', value: input.radius.$value + ' = 8px' },
+  { property: 'border', value: input.border.$value },
+  { property: 'border-focus', value: input['border-focus'].$value },
+  { property: 'padding-v', value: input['padding-v'].$value + ' = 12px' },
+  { property: 'padding-h', value: input['padding-h'].$value + ' = 16px' },
+  { property: 'placeholder', value: input.placeholder.$value },
+];
+---
+<Layout title="Button & Component Tokens">
+  <h1 class="text-3xl font-bold" style="color: var(--semantic-text-primary, #2D2E4A);">
+    Component Tokens
+  </h1>
+
+  <!-- Button Preview -->
+  <section class="mt-8">
+    <h2 class="mb-6 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+      Button Variants
+    </h2>
+    <ButtonPreview variants={variants} client:load />
+  </section>
+
+  <!-- Raw Button Token JSON reference -->
+  <section class="mt-12">
+    <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+      Button Token References
+    </h2>
+    <div
+      class="overflow-x-auto rounded-xl border"
+      style="border-color: var(--semantic-border-default, #E4E4E7);"
+    >
+      <table class="w-full text-sm">
+        <thead>
+          <tr
+            style="background-color: var(--semantic-surface-subtle, #EEF0FA);"
+          >
+            <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Variant</th>
+            <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Property</th>
+            <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Token Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(buttonTokens.component.button).map(([variant, props]) =>
+            Object.entries(props).map(([prop, token], idx) => (
+              <tr style="border-top: 1px solid var(--semantic-border-default, #E4E4E7);">
+                {idx === 0 && (
+                  <td
+                    class="px-4 py-2 font-medium capitalize"
+                    style={`color: var(--semantic-text-primary, #2D2E4A);`}
+                    rowspan={Object.keys(props).length}
+                  >
+                    {variant}
+                  </td>
+                )}
+                <td class="px-4 py-2 font-mono text-xs" style="color: var(--semantic-text-secondary, #6B6F9C);">{prop}</td>
+                <td class="px-4 py-2 font-mono text-xs" style="color: var(--semantic-text-secondary, #6B6F9C);">{(token as any).$value}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Card Tokens -->
+  <section class="mt-12">
+    <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+      Card Tokens
+    </h2>
+    <div
+      class="overflow-x-auto rounded-xl border"
+      style="border-color: var(--semantic-border-default, #E4E4E7);"
+    >
+      <table class="w-full text-sm">
+        <thead>
+          <tr style="background-color: var(--semantic-surface-subtle, #EEF0FA);">
+            <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Property</th>
+            <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Token Reference</th>
+            <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Resolved</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cardRows.map((row) => (
+            <tr style="border-top: 1px solid var(--semantic-border-default, #E4E4E7);">
+              <td class="px-4 py-2 font-medium" style="color: var(--semantic-text-primary, #2D2E4A);">{row.property}</td>
+              <td class="px-4 py-2 font-mono text-xs" style="color: var(--semantic-text-secondary, #6B6F9C);">{row.reference}</td>
+              <td class="px-4 py-2 font-mono text-xs" style="color: var(--semantic-text-secondary, #6B6F9C);">{row.resolved}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Input Tokens -->
+  <section class="mt-12">
+    <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+      Input Tokens
+    </h2>
+    <div
+      class="overflow-x-auto rounded-xl border"
+      style="border-color: var(--semantic-border-default, #E4E4E7);"
+    >
+      <table class="w-full text-sm">
+        <thead>
+          <tr style="background-color: var(--semantic-surface-subtle, #EEF0FA);">
+            <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Property</th>
+            <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Value / Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          {inputRows.map((row) => (
+            <tr style="border-top: 1px solid var(--semantic-border-default, #E4E4E7);">
+              <td class="px-4 py-2 font-medium" style="color: var(--semantic-text-primary, #2D2E4A);">{row.property}</td>
+              <td class="px-4 py-2 font-mono text-xs" style="color: var(--semantic-text-secondary, #6B6F9C);">{row.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</Layout>

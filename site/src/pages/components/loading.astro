@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const skeletonCSS = fs.readFileSync(
+  path.resolve(process.cwd(), '../assets/loading/skeleton.css'),
+  'utf-8'
+);
+---
+<Layout title="Loading Styles">
+  <!-- Inline the loading CSS -->
+  <style set:html={skeletonCSS}></style>
+
+  <h1 class="text-3xl font-bold" style="color: var(--semantic-text-primary, #2D2E4A);">
+    Loading Styles
+  </h1>
+  <p class="mt-2 text-sm" style="color: var(--semantic-text-secondary, #6B6F9C);">
+    Brand-consistent loading animations for skeleton screens, spinners, and progress bars.
+  </p>
+
+  <div class="mt-8 space-y-12">
+    <!-- Skeleton Pulse -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Skeleton Pulse
+      </h2>
+      <div
+        class="rounded-xl border p-6"
+        style="border-color: var(--semantic-border-default, #E4E4E7); background-color: var(--semantic-surface-card, #FFFFFF);"
+      >
+        <div class="space-y-3">
+          <div class="skeleton" style="height: 20px; width: 60%;"></div>
+          <div class="skeleton" style="height: 16px; width: 100%;"></div>
+          <div class="skeleton" style="height: 16px; width: 80%;"></div>
+          <div class="flex gap-3 pt-2">
+            <div class="skeleton" style="height: 40px; width: 40px; border-radius: 50%;"></div>
+            <div class="flex-1 space-y-2 pt-1">
+              <div class="skeleton" style="height: 14px; width: 40%;"></div>
+              <div class="skeleton" style="height: 12px; width: 25%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-4 overflow-x-auto rounded-lg p-4 font-mono text-xs"
+        style="background-color: var(--semantic-surface-subtle, #EEF0FA); color: var(--semantic-text-primary, #2D2E4A);"
+      >
+        <pre><code>{`@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    135deg, #8BB9FF20 0%, #B9B3F520 50%, #F6B6E820 100%
+  );
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}`}</code></pre>
+      </div>
+    </section>
+
+    <!-- Spinner -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Brand Spinner
+      </h2>
+      <div
+        class="flex items-center gap-6 rounded-xl border p-6"
+        style="border-color: var(--semantic-border-default, #E4E4E7); background-color: var(--semantic-surface-card, #FFFFFF);"
+      >
+        <!-- Small -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="brand-spinner" style="width: 20px; height: 20px; border-width: 2px;"></div>
+          <span class="text-xs" style="color: var(--semantic-text-hint, #A3A6C8);">20px</span>
+        </div>
+        <!-- Default -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="brand-spinner"></div>
+          <span class="text-xs" style="color: var(--semantic-text-hint, #A3A6C8);">24px</span>
+        </div>
+        <!-- Large -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="brand-spinner" style="width: 36px; height: 36px; border-width: 4px;"></div>
+          <span class="text-xs" style="color: var(--semantic-text-hint, #A3A6C8);">36px</span>
+        </div>
+      </div>
+      <div
+        class="mt-4 overflow-x-auto rounded-lg p-4 font-mono text-xs"
+        style="background-color: var(--semantic-surface-subtle, #EEF0FA); color: var(--semantic-text-primary, #2D2E4A);"
+      >
+        <pre><code>{`@keyframes brand-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.brand-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #EEF0FA;
+  border-top-color: #7C8DF5;
+  border-radius: 50%;
+  animation: brand-spin 0.8s linear infinite;
+}`}</code></pre>
+      </div>
+    </section>
+
+    <!-- Progress Bar -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Brand Progress Bar
+      </h2>
+      <div
+        class="space-y-4 rounded-xl border p-6"
+        style="border-color: var(--semantic-border-default, #E4E4E7); background-color: var(--semantic-surface-card, #FFFFFF);"
+      >
+        <div>
+          <span class="mb-1 block text-xs" style="color: var(--semantic-text-hint, #A3A6C8);">25%</span>
+          <div class="brand-progress">
+            <div class="brand-progress-bar" style="width: 25%;"></div>
+          </div>
+        </div>
+        <div>
+          <span class="mb-1 block text-xs" style="color: var(--semantic-text-hint, #A3A6C8);">50%</span>
+          <div class="brand-progress">
+            <div class="brand-progress-bar" style="width: 50%;"></div>
+          </div>
+        </div>
+        <div>
+          <span class="mb-1 block text-xs" style="color: var(--semantic-text-hint, #A3A6C8);">75%</span>
+          <div class="brand-progress">
+            <div class="brand-progress-bar" style="width: 75%;"></div>
+          </div>
+        </div>
+        <div>
+          <span class="mb-1 block text-xs" style="color: var(--semantic-text-hint, #A3A6C8);">100%</span>
+          <div class="brand-progress">
+            <div class="brand-progress-bar" style="width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-4 overflow-x-auto rounded-lg p-4 font-mono text-xs"
+        style="background-color: var(--semantic-surface-subtle, #EEF0FA); color: var(--semantic-text-primary, #2D2E4A);"
+      >
+        <pre><code>{`.brand-progress {
+  height: 4px;
+  background: #EEF0FA;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.brand-progress-bar {
+  height: 100%;
+  background: linear-gradient(
+    135deg, #8BB9FF 0%, #B9B3F5 50%, #F6B6E8 100%
+  );
+  transition: width 0.3s ease;
+}`}</code></pre>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fontTokens from '../../../../tokens/primitive/font.json';
+
+const families = fontTokens.font.family;
+const weights = fontTokens.font.weight;
+const sizes = fontTokens.font.size;
+const lineHeights = fontTokens.font.lineHeight;
+
+const familyEntries = Object.entries(families)
+  .filter(([key]) => key !== '$type')
+  .map(([name, token]) => ({ name, value: (token as { $value: string }).$value }));
+
+const weightEntries = Object.entries(weights)
+  .filter(([key]) => key !== '$type')
+  .map(([name, token]) => ({ name, value: (token as { $value: number }).$value }));
+
+const sizeEntries = Object.entries(sizes)
+  .filter(([key]) => key !== '$type')
+  .map(([name, token]) => ({
+    name,
+    size: (token as { $value: string }).$value,
+    lineHeight: lineHeights[name as keyof typeof lineHeights]
+      ? (lineHeights[name as keyof typeof lineHeights] as { $value: string }).$value
+      : '—',
+  }));
+---
+<Layout title="Typography Tokens">
+  <h1 class="text-3xl font-bold" style="color: var(--semantic-text-primary, #2D2E4A);">
+    Typography Tokens
+  </h1>
+
+  <div class="mt-8 space-y-12">
+    <!-- Font Families -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Font Families
+      </h2>
+      <div class="space-y-4">
+        {familyEntries.map((f) => (
+          <div
+            class="rounded-xl border p-5"
+            style="border-color: var(--semantic-border-default, #E4E4E7); background-color: var(--semantic-surface-card, #FFFFFF);"
+          >
+            <div class="flex items-baseline justify-between">
+              <span
+                class="text-sm font-semibold capitalize"
+                style="color: var(--semantic-text-primary, #2D2E4A);"
+              >
+                {f.name}
+              </span>
+              <span
+                class="font-mono text-xs"
+                style="color: var(--semantic-text-hint, #A3A6C8);"
+              >
+                {f.value}
+              </span>
+            </div>
+            <p
+              class="mt-3 text-2xl"
+              style={`font-family: ${f.value}; color: var(--semantic-text-primary, #2D2E4A);`}
+            >
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Font Weights -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Font Weights
+      </h2>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {weightEntries.map((w) => (
+          <div
+            class="rounded-xl border p-4 text-center"
+            style="border-color: var(--semantic-border-default, #E4E4E7); background-color: var(--semantic-surface-card, #FFFFFF);"
+          >
+            <p
+              class="text-2xl capitalize"
+              style={`font-weight: ${w.value}; color: var(--semantic-text-primary, #2D2E4A);`}
+            >
+              Aa
+            </p>
+            <p
+              class="mt-2 text-sm font-medium capitalize"
+              style="color: var(--semantic-text-primary, #2D2E4A);"
+            >
+              {w.name}
+            </p>
+            <p
+              class="font-mono text-xs"
+              style="color: var(--semantic-text-hint, #A3A6C8);"
+            >
+              {w.value}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Type Scale -->
+    <section>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Type Scale
+      </h2>
+      <div
+        class="overflow-hidden rounded-xl border"
+        style="border-color: var(--semantic-border-default, #E4E4E7);"
+      >
+        <table class="w-full text-sm">
+          <thead>
+            <tr style="background-color: var(--semantic-surface-subtle, #EEF0FA);">
+              <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Name</th>
+              <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Size</th>
+              <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Line Height</th>
+              <th class="px-4 py-3 text-left font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">Preview</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sizeEntries.map((s) => (
+              <tr style="border-top: 1px solid var(--semantic-border-default, #E4E4E7);">
+                <td
+                  class="px-4 py-3 font-medium capitalize"
+                  style="color: var(--semantic-text-primary, #2D2E4A);"
+                >
+                  {s.name}
+                </td>
+                <td
+                  class="px-4 py-3 font-mono text-xs"
+                  style="color: var(--semantic-text-secondary, #6B6F9C);"
+                >
+                  {s.size}
+                </td>
+                <td
+                  class="px-4 py-3 font-mono text-xs"
+                  style="color: var(--semantic-text-secondary, #6B6F9C);"
+                >
+                  {s.lineHeight}
+                </td>
+                <td class="px-4 py-3">
+                  <span
+                    style={`font-size: ${s.size}; line-height: ${s.lineHeight}; color: var(--semantic-text-primary, #2D2E4A);`}
+                  >
+                    ReadMigo
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</Layout>
