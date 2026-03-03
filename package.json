@@ -6,7 +6,13 @@
   "description": "Readmigo Brand Hub - Design Token SSOT",
   "scripts": {
     "build:tokens": "tsx build/build.ts",
-    "build": "pnpm build:tokens"
+    "build": "pnpm build:tokens",
+    "sync:ios": "tsx build/sync.ts ios",
+    "sync:android": "tsx build/sync.ts android",
+    "sync:web": "tsx build/sync.ts web",
+    "sync:dashboard": "tsx build/sync.ts dashboard",
+    "sync:mobile": "tsx build/sync.ts mobile",
+    "sync:all": "tsx build/sync.ts"
   },
   "keywords": [],
   "author": "",
