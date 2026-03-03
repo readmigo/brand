@@ -1,28 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
 ---
 <Layout title="Brand Hub">
   <div class="space-y-8">
-    <div class="rounded-2xl p-8 text-white" style="background: linear-gradient(135deg, #8BB9FF 0%, #B9B3F5 50%, #F6B6E8 100%);">
+    <div class="relative rounded-2xl p-8 text-white" style="background: linear-gradient(135deg, #8BB9FF 0%, #B9B3F5 50%, #F6B6E8 100%);">
+      <div class="absolute top-4 right-4">
+        <ThemeToggle client:load />
+      </div>
       <h1 class="text-4xl font-bold">ReadMigo Brand Hub</h1>
       <p class="mt-2 text-lg opacity-90">Design Tokens, Assets, and Copy — Single Source of Truth</p>
     </div>
     <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-      <a href="/tokens/colors" class="rounded-xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+      <a
+        href="/tokens/colors"
+        class="rounded-xl p-6 transition-shadow hover:shadow-md"
+        style="background-color: var(--semantic-surface-card, #FFFFFF); box-shadow: var(--shadow-sm);"
+      >
         <h2 class="font-semibold">Tokens</h2>
-        <p class="text-sm text-gray-500">Colors, Typography, Spacing</p>
+        <p class="text-sm" style="color: var(--semantic-text-secondary, #6B6F9C);">Colors, Typography, Spacing</p>
       </a>
-      <a href="/components/buttons" class="rounded-xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+      <a
+        href="/components/buttons"
+        class="rounded-xl p-6 transition-shadow hover:shadow-md"
+        style="background-color: var(--semantic-surface-card, #FFFFFF); box-shadow: var(--shadow-sm);"
+      >
         <h2 class="font-semibold">Components</h2>
-        <p class="text-sm text-gray-500">Buttons, Cards, Loading</p>
+        <p class="text-sm" style="color: var(--semantic-text-secondary, #6B6F9C);">Buttons, Cards, Loading</p>
       </a>
-      <a href="/assets" class="rounded-xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+      <a
+        href="/assets"
+        class="rounded-xl p-6 transition-shadow hover:shadow-md"
+        style="background-color: var(--semantic-surface-card, #FFFFFF); box-shadow: var(--shadow-sm);"
+      >
         <h2 class="font-semibold">Assets</h2>
-        <p class="text-sm text-gray-500">Logo, Icons, Store</p>
+        <p class="text-sm" style="color: var(--semantic-text-secondary, #6B6F9C);">Logo, Icons, Store</p>
       </a>
-      <a href="/copy" class="rounded-xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+      <a
+        href="/copy"
+        class="rounded-xl p-6 transition-shadow hover:shadow-md"
+        style="background-color: var(--semantic-surface-card, #FFFFFF); box-shadow: var(--shadow-sm);"
+      >
         <h2 class="font-semibold">Copy</h2>
-        <p class="text-sm text-gray-500">Store texts, Changelog</p>
+        <p class="text-sm" style="color: var(--semantic-text-secondary, #6B6F9C);">Store texts, Changelog</p>
       </a>
     </div>
   </div>

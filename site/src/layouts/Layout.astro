@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import '../../../dist/css/variables.css';
+import '../../../dist/css/variables.dark.css';
 
 interface Props {
   title: string;
@@ -13,9 +15,24 @@ const { title } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title} | ReadMigo Brand Hub</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script is:inline>
+    // Initialize theme from localStorage before paint to prevent flash
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'dark' || theme === 'light') {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    })();
+  </script>
 </head>
-<body class="min-h-screen bg-[#F7F8FD] text-[#2D2E4A]">
-  <nav class="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur">
+<body
+  class="min-h-screen"
+  style="background-color: var(--semantic-surface-background, #F7F8FD); color: var(--semantic-text-primary, #2D2E4A);"
+>
+  <nav
+    class="sticky top-0 z-50 border-b backdrop-blur"
+    style="border-color: var(--semantic-border-default, #E4E4E7); background-color: color-mix(in srgb, var(--semantic-surface-card, #FFFFFF) 80%, transparent);"
+  >
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
       <a href="/" class="text-lg font-bold">ReadMigo Brand Hub</a>
       <div class="flex gap-6 text-sm">

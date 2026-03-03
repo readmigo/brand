@@ -1,0 +1,143 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ThemeToggle from '../../components/ThemeToggle.tsx';
+import ColorPalette from '../../components/ColorPalette.tsx';
+import GradientPreview from '../../components/GradientPreview.tsx';
+
+import colorTokens from '../../../../tokens/primitive/color.json';
+import grayTokens from '../../../../tokens/primitive/gray.json';
+
+// Extract colors from token JSON
+const brand = colorTokens.color.brand;
+const accent = colorTokens.color.accent;
+const semantic = colorTokens.color.semantic;
+const text = colorTokens.color.text;
+const background = colorTokens.color.background;
+const gray = grayTokens.color.gray;
+
+// Build color arrays for palette display
+const brandColors = [
+  { name: 'Primary', value: brand.primary.$value, description: brand.primary.$description },
+  { name: 'Primary (dark)', value: brand['primary-dark'].$value, description: brand['primary-dark'].$description },
+  { name: 'Blue', value: brand.blue.$value, description: brand.blue.$description },
+  { name: 'Blue (dark)', value: brand['blue-dark'].$value, description: brand['blue-dark'].$description },
+  { name: 'Purple', value: brand.purple.$value, description: brand.purple.$description },
+  { name: 'Purple (dark)', value: brand['purple-dark'].$value, description: brand['purple-dark'].$description },
+  { name: 'Pink', value: brand.pink.$value, description: brand.pink.$description },
+  { name: 'Pink (dark)', value: brand['pink-dark'].$value, description: brand['pink-dark'].$description },
+];
+
+const accentColors = [
+  { name: 'Accent Purple', value: accent.purple.$value },
+  { name: 'Accent Purple (dark)', value: accent['purple-dark'].$value },
+  { name: 'Accent Pink', value: accent.pink.$value },
+  { name: 'Accent Pink (dark)', value: accent['pink-dark'].$value },
+  { name: 'Accent Blue', value: accent.blue.$value },
+  { name: 'Accent Blue (dark)', value: accent['blue-dark'].$value },
+  { name: 'Accent Gold', value: accent.gold.$value },
+  { name: 'Accent Gold (dark)', value: accent['gold-dark'].$value },
+  { name: 'System', value: accent.system.$value, description: accent.system.$description },
+  { name: 'System (dark)', value: accent['system-dark'].$value, description: accent['system-dark'].$description },
+];
+
+const semanticColors = [
+  { name: 'Success', value: semantic.success.$value },
+  { name: 'Success (dark)', value: semantic['success-dark'].$value },
+  { name: 'Warning', value: semantic.warning.$value },
+  { name: 'Warning (dark)', value: semantic['warning-dark'].$value },
+  { name: 'Error', value: semantic.error.$value },
+  { name: 'Error (dark)', value: semantic['error-dark'].$value },
+  { name: 'Info', value: semantic.info.$value },
+  { name: 'Info (dark)', value: semantic['info-dark'].$value },
+];
+
+const textColors = [
+  { name: 'Primary', value: text.primary.$value },
+  { name: 'Primary (dark)', value: text['primary-dark'].$value },
+  { name: 'Secondary', value: text.secondary.$value },
+  { name: 'Secondary (dark)', value: text['secondary-dark'].$value },
+  { name: 'Hint', value: text.hint.$value },
+  { name: 'Hint (dark)', value: text['hint-dark'].$value },
+  { name: 'On Dark', value: text['on-dark'].$value },
+];
+
+const backgroundColors = [
+  { name: 'Main', value: background.main.$value },
+  { name: 'Card', value: background.card.$value },
+  { name: 'Subtle', value: background.subtle.$value },
+  { name: 'Main (dark)', value: background['main-dark'].$value },
+  { name: 'Card (dark)', value: background['card-dark'].$value },
+  { name: 'Subtle (dark)', value: background['subtle-dark'].$value },
+];
+
+const grayColors = Object.entries(gray).map(([key, token]) => ({
+  name: `Gray ${key}`,
+  value: (token as { $value: string }).$value,
+}));
+---
+<Layout title="Color Tokens">
+  <div class="flex items-center justify-between">
+    <h1 class="text-3xl font-bold" style="color: var(--semantic-text-primary, #2D2E4A);">
+      Color Tokens
+    </h1>
+    <ThemeToggle client:load />
+  </div>
+
+  <section class="mt-8 space-y-12">
+    <!-- Brand Gradient -->
+    <div>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Brand Gradient
+      </h2>
+      <GradientPreview client:load />
+    </div>
+
+    <!-- Brand Colors -->
+    <div>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Brand Colors
+      </h2>
+      <ColorPalette colors={brandColors} client:load />
+    </div>
+
+    <!-- Accent Colors -->
+    <div>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Accent Colors
+      </h2>
+      <ColorPalette colors={accentColors} client:load />
+    </div>
+
+    <!-- Semantic Colors -->
+    <div>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Semantic Colors
+      </h2>
+      <ColorPalette colors={semanticColors} client:load />
+    </div>
+
+    <!-- Text Colors -->
+    <div>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Text Colors
+      </h2>
+      <ColorPalette colors={textColors} client:load />
+    </div>
+
+    <!-- Background Colors -->
+    <div>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Background Colors
+      </h2>
+      <ColorPalette colors={backgroundColors} client:load />
+    </div>
+
+    <!-- Gray Scale -->
+    <div>
+      <h2 class="mb-4 text-xl font-semibold" style="color: var(--semantic-text-primary, #2D2E4A);">
+        Gray Scale
+      </h2>
+      <ColorPalette colors={grayColors} client:load />
+    </div>
+  </section>
+</Layout>
