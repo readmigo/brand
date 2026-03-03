@@ -1,0 +1,34 @@
+{
+  "semantic": {
+    "action": {
+      "primary":   { "$type": "color", "$value": "{color.brand.primary-dark}" },
+      "secondary": { "$type": "color", "$value": "{color.accent.purple-dark}" }
+    },
+    "text": {
+      "primary":   { "$type": "color", "$value": "{color.text.primary-dark}" },
+      "secondary": { "$type": "color", "$value": "{color.text.secondary-dark}" },
+      "hint":      { "$type": "color", "$value": "{color.text.hint-dark}" },
+      "inverse":   { "$type": "color", "$value": "{color.black}" }
+    },
+    "surface": {
+      "background": { "$type": "color", "$value": "{color.background.main-dark}" },
+      "card":       { "$type": "color", "$value": "{color.background.card-dark}" },
+      "subtle":     { "$type": "color", "$value": "{color.background.subtle-dark}" }
+    },
+    "status": {
+      "success": { "$type": "color", "$value": "{color.semantic.success-dark}" },
+      "warning": { "$type": "color", "$value": "{color.semantic.warning-dark}" },
+      "error":   { "$type": "color", "$value": "{color.semantic.error-dark}" },
+      "info":    { "$type": "color", "$value": "{color.semantic.info-dark}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.gray.700}" },
+      "light":   { "$type": "color", "$value": "{color.background.subtle-dark}" }
+    },
+    "gradient": {
+      "start":  { "$type": "color", "$value": "{color.brand.blue-dark}" },
+      "middle": { "$type": "color", "$value": "{color.brand.purple-dark}" },
+      "end":    { "$type": "color", "$value": "{color.brand.pink-dark}" }
+    }
+  }
+}

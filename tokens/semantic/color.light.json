@@ -1,0 +1,34 @@
+{
+  "semantic": {
+    "action": {
+      "primary":   { "$type": "color", "$value": "{color.brand.primary}" },
+      "secondary": { "$type": "color", "$value": "{color.accent.purple}" }
+    },
+    "text": {
+      "primary":   { "$type": "color", "$value": "{color.text.primary}" },
+      "secondary": { "$type": "color", "$value": "{color.text.secondary}" },
+      "hint":      { "$type": "color", "$value": "{color.text.hint}" },
+      "inverse":   { "$type": "color", "$value": "{color.text.on-dark}" }
+    },
+    "surface": {
+      "background": { "$type": "color", "$value": "{color.background.main}" },
+      "card":       { "$type": "color", "$value": "{color.background.card}" },
+      "subtle":     { "$type": "color", "$value": "{color.background.subtle}" }
+    },
+    "status": {
+      "success": { "$type": "color", "$value": "{color.semantic.success}" },
+      "warning": { "$type": "color", "$value": "{color.semantic.warning}" },
+      "error":   { "$type": "color", "$value": "{color.semantic.error}" },
+      "info":    { "$type": "color", "$value": "{color.semantic.info}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.gray.200}" },
+      "light":   { "$type": "color", "$value": "{color.background.subtle}" }
+    },
+    "gradient": {
+      "start":  { "$type": "color", "$value": "{color.brand.blue}" },
+      "middle": { "$type": "color", "$value": "{color.brand.purple}" },
+      "end":    { "$type": "color", "$value": "{color.brand.pink}" }
+    }
+  }
+}
