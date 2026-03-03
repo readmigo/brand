@@ -1,0 +1,20 @@
+{
+  "name": "@readmigo/brand",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Readmigo Brand Hub - Design Token SSOT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.26.0",
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "style-dictionary": "^4.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
