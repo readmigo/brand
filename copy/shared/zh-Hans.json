@@ -1,0 +1,11 @@
+{
+  "brand": {
+    "name": "ReadMigo",
+    "tagline": "AI 智能阅读伴侣",
+    "description": "用 AI 辅助，让阅读更高效"
+  },
+  "languages": {
+    "supported": ["en", "zh-Hans", "zh-Hant"],
+    "default": "en"
+  }
+}
