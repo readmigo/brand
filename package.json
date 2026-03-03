@@ -5,7 +5,8 @@
   "private": true,
   "description": "Readmigo Brand Hub - Design Token SSOT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:tokens": "tsx build/build.ts",
+    "build": "pnpm build:tokens"
   },
   "keywords": [],
   "author": "",
