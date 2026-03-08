@@ -7,8 +7,22 @@
     </linearGradient>
   </defs>
   <rect width="512" height="512" fill="url(#bg)"/>
-  <!-- Left page -->
-  <path d="M113 375 V200 Q113 128, 181 128 Q249 128, 249 200 V370 C249 390, 181 390, 113 375 Z" fill="white"/>
-  <!-- Right page -->
-  <path d="M399 375 V200 Q399 128, 331 128 Q263 128, 263 200 V370 C263 390, 331 390, 399 375 Z" fill="white"/>
+  <!-- Left page: smooth dome top, rounded bottom corners -->
+  <path d="M82 400
+    L82 170
+    C82 125, 125 105, 165 105
+    C205 105, 248 125, 248 170
+    L248 400
+    Q248 420, 230 420
+    Q165 365, 100 420
+    Q82 420, 82 400 Z" fill="white"/>
+  <!-- Right page: mirror -->
+  <path d="M430 400
+    L430 170
+    C430 125, 387 105, 347 105
+    C307 105, 264 125, 264 170
+    L264 400
+    Q264 420, 282 420
+    Q347 365, 412 420
+    Q430 420, 430 400 Z" fill="white"/>
 </svg>
