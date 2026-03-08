@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 66" fill="none">
   <defs>
     <linearGradient id="grad" x1="0" y1="0" x2="0.6" y2="1">
       <stop offset="0%" stop-color="#8DC5FB"/>
@@ -6,15 +6,29 @@
       <stop offset="100%" stop-color="#F0A5CA"/>
     </linearGradient>
   </defs>
-  <!-- Book mark -->
-  <g transform="translate(0, 2)">
+  <!-- Book icon (matching logo-full shape, scaled to ~66px height) -->
+  <g transform="translate(0, 0)">
     <!-- Left page -->
-    <path d="M0 62 V18 Q0 0, 17 0 Q34 0, 34 18 V60 C34 66, 17 66, 0 62 Z" fill="url(#grad)"/>
+    <path d="M0 52
+      L0 19
+      C2.3 15, 5.5 13, 10.7 13
+      C15.9 13, 19 15, 21.4 19
+      L21.4 52
+      Q21.4 54.6, 19.1 54.6
+      Q10.7 48.5, 2.3 54.6
+      Q0 54.6, 0 52 Z" fill="url(#grad)"/>
     <!-- Right page -->
-    <path d="M72 62 V18 Q72 0, 55 0 Q38 0, 38 18 V60 C38 66, 55 66, 72 62 Z" fill="url(#grad)"/>
+    <path d="M56 52
+      L56 19
+      C53.7 15, 50.5 13, 45.3 13
+      C40.1 13, 37 15, 34.6 19
+      L34.6 52
+      Q34.6 54.6, 36.9 54.6
+      Q45.3 48.5, 53.7 54.6
+      Q56 54.6, 56 52 Z" fill="url(#grad)"/>
   </g>
   <!-- Readmigo text -->
-  <text x="88" y="48" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, Inter, Helvetica, sans-serif"
+  <text x="72" y="48" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, Inter, Helvetica, sans-serif"
         font-size="38" font-weight="700" letter-spacing="-0.5" fill="url(#grad)">
     Readmigo
   </text>

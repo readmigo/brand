@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286 262" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
   <defs>
     <linearGradient id="grad" x1="0" y1="0" x2="0.6" y2="1">
       <stop offset="0%" stop-color="#8DC5FB"/>
@@ -6,8 +6,22 @@
       <stop offset="100%" stop-color="#F0A5CA"/>
     </linearGradient>
   </defs>
-  <!-- Left page -->
-  <path d="M0 247 V72 Q0 0, 68 0 Q136 0, 136 72 V242 C136 262, 68 262, 0 247 Z" fill="url(#grad)"/>
-  <!-- Right page -->
-  <path d="M286 247 V72 Q286 0, 218 0 Q150 0, 150 72 V242 C150 262, 218 262, 286 247 Z" fill="url(#grad)"/>
+  <g transform="translate(0, -27)">
+    <path d="M82 405
+      L82 185
+      C100 155, 125 140, 165 140
+      C205 140, 224 155, 248 185
+      L248 405
+      Q248 425, 230 425
+      Q165 370, 100 425
+      Q82 425, 82 405 Z" fill="url(#grad)"/>
+    <path d="M430 405
+      L430 185
+      C412 155, 387 140, 347 140
+      C307 140, 288 155, 264 185
+      L264 405
+      Q264 425, 282 425
+      Q347 370, 412 425
+      Q430 425, 430 405 Z" fill="url(#grad)"/>
+  </g>
 </svg>
